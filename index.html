@@ -25,23 +25,152 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section data-background-color="#00ffff" style="color: #1c1e20">
-            <section>css/ Core styles without which the project does not function
-                js/ Like above but for JavaScript
-                plugin/ Components that have been developed as extensions to reveal.js
-                lib/ All other third party assets (JavaScript, CSS, fonts)
+        <section data-background-color="#53a100">
+            <section>
+                <h3>Testowanie oprogramowania</h3>
+            </section>
+            <section>
+                <p>Ogólne kategorie testów oprogramowania:</p>
                 <br/>
-                <br/>
-                <ul style="display: block; margin-left: 10%;">
-                    <li>item 1</li>
-                    <li>item 2</li>
-                    <li>item 3</li>
+                <ul>
+                    <li><p>Testowanie białoskrzynkowe i czarnoskrzynkowe</p></li>
+                    <li><p>Testowanie dynamiczne i statyczne</p></li>
+                    <li><p>Testowanie funkcjonalne i niefunkcjonalne</p></li>
+                    <li><p>Testowanie manualne i automatyczne</p></li>
                 </ul>
             </section>
-            <section>Slide 2</section>
+            <section>
+                <h4>Biała i czarna skrzynka</h4>
+                <br/>
+                <p>Czarna skrzynka - jedyne do czego mamy dostęp to wyprowadzone interfejsy użytkowania</p>
+                <br/>
+                <p>Biała skrzynka - mamy dostęp do wiedzy wykraczającej poza to, co jest nam znane
+                    z poziomu interfejsów.
+                    <br/> Posiadamy wiedzę o tym jak skonstruowane jest oprogramowanie, tzn. o zastosowanych
+                    algorytmach, bibliotekach, kodzie źródłowym, bazie danych itd.</p>
+            </section>
+            <section>
+                <h4>Testy dynamiczne i statyczne</h4>
+                <br/>
+                <p>Testy dynamiczne - wymagają uruchomienia oprogramowania, wspierają walidację,
+                    wymagają zaprojektowania przypadków testowych. Z reguły koszt znalezienia i naprawy błędu jest
+                    wyższy.</p>
+                <p>Testy statyczne - nie wymagają uruchamiania oprogramowania, wspierają weryfikację,
+                    wymagają wiedzy z zakresu budowy, technologii, języków oprogramowania . Z reguły koszt znalezienia i
+                    naprawy błędu jest niższy.</p>
+            </section>
+            <section>
+                <h4>Testy funkcjonalne i niefunkcjonalne</h4>
+                <br/>
+                <p>Testy funkcjonalne - Testowanie funkcjonalne jest sprawdzeniem funkcji oprogramowania.
+                    Testujemy więc co dane oprogramowanie ma robić w danej sytuacji oraz jakie są oczekiwane odpowiedzi
+                    systemu na dane działania użytkownika.
+                </p>
+                <br/>
+                <p>Testy niefunkcjonalne - to wszystkie testy, które nie są testami funkcjonalnymi :)</p>
+                <p></p>
+            </section>
+            <section>
+                <p>... tzn. testujemy nie funkcje a atrybuty systemu, takie jak:</p>
+                <br/>
+                <ul>
+                    <li><p>Szybkość</p></li>
+                    <li><p>Przyjazność interfejsów</p></li>
+                    <li><p>Niezawodność działania</p></li>
+                    <li><p>Skalowalność</p></li>
+                    <li><p>Efektywność (wydajność / zużycie zasobów)</p></li>
+                    <li><p>Utrzymywalność / przenaszalność</p></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Testy manualne i automatyczne</h4>
+                <br/>
+                <p>Testy manualne:</p>
+                <ul>
+                    <li><p>Z reguły nie wymagają wiedzy z zakresu programownaia</p></li>
+                    <li><p>Kosztowne w przeprowadzaniu</p></li>
+                    <li><p>Wolne w przeprowadzaniu</p></li>
+                    <li><p>Są narażone na błędy ludzkie</p></li>
+                    <li><p>Jedyny sposób zapewnienia testów eksploracyjnych</p></li>
+                    <li><p>Najczęściej są podstawą do wykonania testów automatycznych</p></li>
+                </ul>
+            </section>
+            <section>
+                <p>Testy automatyczne:</p>
+                <ul>
+                    <li><p>Wymagają wiedzy z zakresu programownaia</p></li>
+                    <li><p>Kosztowne w implementacji (?)</p></li>
+                    <li><p>Tanie w przeprowadzaniu</p></li>
+                    <li><p>Szybkie w przeprowadzaniu</p></li>
+                    <li><p>Są wykonywane przez maszyne, a więc wolne od ludzkich błędów</p></li>
+                    <li><p>Głównie nastawione na wykrywanie regresji</p></li>
+                </ul>
+            </section>
         </section>
-        <section data-background-color="#ff0000">
-            <section>Slide 3</section>
+        <section data-background-color="#0028b8">
+            <section>
+                <h4>Podział testów automatycznych</h4>
+                <br/>
+                <ul style="margin-left: 15%">
+                    <li><p>Testy "end to end"</p></li>
+                    <li><p>Testy integracyjne</p></li>
+                    <li><p>Testy jednostkowe</p></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Testy "end to end"</h4>
+                <br/>
+                <p>Testy end-to-end są testami akceptacyjnymi, które zapewniają, że aplikacja spełnia oczekiwania
+                    użytkownika.</p>
+                <br/>
+                <p>Testują one całą funkcjonalność od początku do końca (end to end), symulują zachowanie użytkowników i
+                    najczęściej testują też UI.</p>
+            </section>
+            <section>
+                <h4>Testy automatyzujące UI</h4>
+                <br/>
+                <p>Frameworki do automatycznych testów UI:</p>
+                <ul style="text-align: left">
+                    <li><p>Selenium</p></li>
+                    <li><p>Cypress</p></li>
+                    <li><p>Appium</p></li>
+                    <li><p>Ranorex</p></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Testy jednostkowe</h4>
+                <br/>
+                <p>Testy te powinny testować pojedynczą “jednostkę” kodu (powinny być więc atomowe). Są “najtańsze“.
+                    Oznacza to, że wykonywanie ich jest bardzo szybkie, ponieważ nie testują one komponentów graficznych
+                    oraz integracji z innymi systemami,
+                    co związane jest z przygotowaniem odpowiednich środowisk.
+                    Testy te uruchamiane są w izolacji, oznacza to, że nie są w żaden sposób związane z innymi
+                    elementami systemu. </p>
+            </section>
+            <section>
+                <p>Frameworki do testów jednostkowych: </p>
+                <br/>
+                <ul>
+                    <li>NUnit ( C# )</li>
+                    <li>JUnit, TestNG ( Java )</li>
+                    <li>HtmlUnit ( JavaSctipt )</li>
+                    <li>Embunit ( C, C++ )</li>
+                </ul>
+            </section>
+            <section>
+                <h4>Testy integracyjne</h4>
+                <br/>
+                <p>Testy integracyjne odgrywają pomocniczą rolę.
+                    To wyspecjalizowany typ testów, koncentrujący się na punktach połączeń z zasobami zbyt „ciężkimi”
+                    dla testów jednostkowych,
+                    ale mającymi zbyt wiele przypadków brzegowych by móc być w pełni pokryte przez testy end-to-end.</p>
+            </section>
+        </section>
+        <section data-background-color="#b64500">
+            <section>
+                <h4>TDD - test driven development</h4>
+                <br/>
+            </section>
             <section>Slide 4</section>
         </section>
     </div>
