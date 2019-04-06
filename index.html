@@ -27,7 +27,7 @@
     <div class="slides">
         <section data-background-color="#53a100">
             <section>
-                <h3>Testowanie oprogramowania</h3>
+                <h4>Testowanie oprogramowania</h4>
             </section>
             <section>
                 <p>Ogólne kategorie testów oprogramowania:</p>
@@ -43,21 +43,20 @@
                 <h4>Biała i czarna skrzynka</h4>
                 <br/>
                 <p>Czarna skrzynka - jedyne do czego mamy dostęp to wyprowadzone interfejsy użytkowania</p>
-                <br/>
                 <p>Biała skrzynka - mamy dostęp do wiedzy wykraczającej poza to, co jest nam znane
                     z poziomu interfejsów.
                     <br/> Posiadamy wiedzę o tym jak skonstruowane jest oprogramowanie, tzn. o zastosowanych
                     algorytmach, bibliotekach, kodzie źródłowym, bazie danych itd.</p>
             </section>
             <section>
-                <h4>Testy dynamiczne i statyczne</h4>
+                <h4>Testy statyczne i dynamiczne</h4>
                 <br/>
-                <p>Testy dynamiczne - wymagają uruchomienia oprogramowania, wspierają walidację,
-                    wymagają zaprojektowania przypadków testowych. Z reguły koszt znalezienia i naprawy błędu jest
-                    wyższy.</p>
                 <p>Testy statyczne - nie wymagają uruchamiania oprogramowania, wspierają weryfikację,
                     wymagają wiedzy z zakresu budowy, technologii, języków oprogramowania . Z reguły koszt znalezienia i
                     naprawy błędu jest niższy.</p>
+                <p>Testy dynamiczne - wymagają uruchomienia oprogramowania, wspierają walidację,
+                    wymagają zaprojektowania przypadków testowych. Z reguły koszt znalezienia i naprawy błędu jest
+                    wyższy.</p>
             </section>
             <section>
                 <h4>Testy funkcjonalne i niefunkcjonalne</h4>
@@ -91,7 +90,6 @@
                     <li><p>Kosztowne w przeprowadzaniu</p></li>
                     <li><p>Wolne w przeprowadzaniu</p></li>
                     <li><p>Są narażone na błędy ludzkie</p></li>
-                    <li><p>Jedyny sposób zapewnienia testów eksploracyjnych</p></li>
                     <li><p>Najczęściej są podstawą do wykonania testów automatycznych</p></li>
                 </ul>
             </section>
@@ -110,11 +108,12 @@
         <section data-background-color="#0028b8">
             <section>
                 <h4>Podział testów automatycznych</h4>
-                <br/>
+            </section>
+            <section>
                 <ul style="margin-left: 15%">
                     <li><p>Testy "end to end"</p></li>
-                    <li><p>Testy integracyjne</p></li>
                     <li><p>Testy jednostkowe</p></li>
+                    <li><p>Testy integracyjne</p></li>
                 </ul>
             </section>
             <section>
@@ -127,7 +126,7 @@
                     najczęściej testują też UI.</p>
             </section>
             <section>
-                <h4>Testy automatyzujące UI</h4>
+                <h4>Automatyzacja testów UI</h4>
                 <br/>
                 <p>Frameworki do automatycznych testów UI:</p>
                 <ul style="text-align: left">
@@ -151,11 +150,25 @@
                 <p>Frameworki do testów jednostkowych: </p>
                 <br/>
                 <ul>
-                    <li>NUnit ( C# )</li>
+                    <li>XUnit, NUnit ( C# )</li>
                     <li>JUnit, TestNG ( Java )</li>
                     <li>HtmlUnit ( JavaSctipt )</li>
                     <li>Embunit ( C, C++ )</li>
                 </ul>
+            </section>
+            <section>
+                <p>Przykład testu jednostkowego </p>
+                <br/>
+                <p>Testowana metoda: </p>
+                <img src="img/testedFunction.png" class="stretch">
+            </section>
+            <section>
+                <p>Test jednostkowy: </p>
+                <img src="img/UnitTestSample.png" class="stretch">
+            </section>
+            <section>
+                <p>Wynik testu jednostkowego:</p>
+                <img src="img/UnitTestResult.png" class="stretch">
             </section>
             <section>
                 <h4>Testy integracyjne</h4>
@@ -171,7 +184,93 @@
                 <h4>TDD - test driven development</h4>
                 <br/>
             </section>
-            <section>Slide 4</section>
+            <section>
+                <p>Czym jest TDD ? </p>
+                <br/>
+                <p>TDD to podejście do tworzenia oprogramowania,
+                    które zakłada, że przed napisaniem właściwej funkcjonalności programista zaczyna od utworzenia
+                    testu.
+                    Test ten powinien testować funkcjonalność, którą dopiero chcemy napisać.</p>
+            </section>
+            <section>
+                <p>Jak to wygląda w praktyce?</p>
+                <br/>
+                <p>TDD to podejście, które składa się z trzech faz.
+                    Te trzy fazy łączą się w cykl.
+                    Cały proces pisania kodu składa się z właśnie takich cykli, które powtarzasz jeden po drugim.
+                </p>
+            </section>
+            <section>
+                <p>Cykl to trzy fazy:</p>
+                <ol>
+                    <li><p>Faza red</p></li>
+                    <li><p>Faza green</p></li>
+                    <li><p>Refactor</p></li>
+                </ol>
+            </section>
+            <section>
+                <p>Faza red</p>
+                <br/>
+                <p>Pierwszym krokiem jest napisanie testu.
+                    Test ten nie może się powieść, ponieważ sama funkcjonalność jeszcze nie jest zaimplementowana.</p>
+            </section>
+            <section data-background-color="#53a100">
+                <p>Faza green</p>
+                <br/>
+                <p>Kolejnym krokiem jest napisanie kodu, który implementuje brakującą funkcjonalność.
+                    W tym momencie istotne jest to aby ten kod nie był „idealny”.
+                    Chodzi o możliwe jak najszybszą implementację, która spełnia założenia testu,
+                    który był napisany w poprzedniej fazie.</p>
+            </section>
+            <section data-background-color="#ffffff" style="color: black">
+                <p>Refactor</p>
+                <br/>
+                <p>Refaktoryzacja (ang. refactor) to proces,
+                    w którym zmieniamy kod w taki sposób, że nie zostaje zmieniona jego funkcjonalność.
+                    Mówi się o „oczyszczaniu” kodu, doprowadzaniu go do lepszego stanu.
+                </p>
+                <p>Przykładem refaktoryzacji może być wydzielenie oddzielnej metody,
+                    która usuwa powielony kod czy stworzenie zupełnie nowej klasy odpowiedzialnej za pewną część zadań
+                    danej klasy.</p>
+            </section>
+            <section>
+                <h4>Zalety TDD: </h4>
+                <br/>
+                <ul>
+                    <li><p>Dokładne zrozumienie wymagań dokumentacji. Testy piszemy zawsze względem dokumentacji.</p>
+                    </li>
+                    <li><p>Testy mogą służyć jako zawsze aktualna dokumentacja oprogramowania</p></li>
+                    <li><p>Natychmiastowy i automatyczny feedback na temat błędu w kodzie.</p></li>
+                    <li><p>Krótszy, całkowity, czas procesu developmentu.</p></li>
+                    <li><p>Dużo mniej ręcznego debugowania.</p></li>
+                </ul>
+            </section>
+            <section>
+                <h4>Wady TDD: </h4>
+                <br/>
+                <ul>
+                    <li><p>Czas i wysiłek na trening i przygotowanie developerów.</p></li>
+                    <li><p>Potrzeba dyscypliny osobistej i zespołowej.</p></li>
+                    <li><p>Początkowa percepcja dłuższego czasu developmentu.</p></li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h4>Zadanie praktyczne:</h4>
+                <br/>
+                <p>Przeprowadzić cykl TDD dla poniższego zadania: </p>
+                <p>Zaimplementuj metodę, która będzie sortować rosnąco tylko liczby nieparzyste znajdujące się w
+                    tablicy.</p>
+            </section>
+            <section>
+                <p>Przykład:</p><br/>
+                <code>sortArray([5, 3, 2, 8, 1, 4])</code>
+                <br/>
+                <p>Wynik:</p>
+                <code>[1, 3, 2, 8, 5, 4]</code>
+
+            </section>
         </section>
     </div>
 </div>
